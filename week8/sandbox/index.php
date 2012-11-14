@@ -1,3 +1,14 @@
+<?php
+
+include 'Mobile_Detect.php';
+$detect = new Mobile_Detect();
+
+if (!$detect->isMobile()) {
+    header('Location: mobiletest/iphone.php?url=stanford.edu/~holstein/cgi-bin/week8/sandbox/mobile.php');
+}
+
+?>
+
 <!DOCTYPE html> 
 <html>
 
@@ -66,9 +77,7 @@
 		          	console.log("This is the address the user put in");
 		          	debug = results;
 		          	console.log(debug);
-		          	
-		          	
-		            
+
 		            map.setCenter(results[0].geometry.location);
 		            var marker = new google.maps.Marker({
 		                map: map,
